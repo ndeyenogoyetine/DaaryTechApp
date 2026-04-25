@@ -8,5 +8,10 @@ require_once(__DIR__ . "/UserController.php");
         $UserController->auth();
     }
 
+    if (isset($_GET['logout'])) {
+        $UserController->logout();
+    }
+
+
 
 ?>

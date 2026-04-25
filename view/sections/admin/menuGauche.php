@@ -23,8 +23,6 @@
 						</ul>
 					</li>
 				</ul>
-				<!-- end sidebar user -->
-				<!-- begin sidebar nav -->
 				<ul class="nav"><li class="nav-header">Navigation</li>
 				<!-- Dashboaed -->
 					<li class="has-sub active">
@@ -104,20 +102,17 @@
 					
 					<!-- Déconection -->
 					<li class="has-sub">
-						<a href="javascript:;">
+						<a href="logout">
 							<span class="badge pull-right">10</span>
 							<i class="fa fa-sign-out-alt"></i>
 							<span>Déconection</span>
 						</a>
 					</li>
-					        <!-- butont -->
 					<li>
                         <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"> 
 	                    <i class="fa fa-angle-double-left"></i></a>
 					</li>
 				</ul>
-				<!-- end sidebar nav -->
 			</div>
-			<!-- end sidebar scrollbar -->
 		</div>
 	<div class="sidebar-bg"></div>

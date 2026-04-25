@@ -57,7 +57,7 @@ nomInput.addEventListener("input", () => {
 // Validation du champs  Description à la saisie
 descriptionInput.addEventListener("input", () => {
     const description = descriptionInput.value.trim();
-    const descriptionValidator = Validator.nameValidator("La description", 10, 40, description);
+    const descriptionValidator = Validator.nameValidator("La description", 10, 500, description);
     if (descriptionValidator) {
         showError(descriptionInput, descriptionValidator.message);
     }
@@ -112,7 +112,7 @@ document.querySelector("button[type='reset']").addEventListener("click", () => {
 });
 
 const isNameVlide = Validator.nameValidator("Le nom", 5, 40, nom) == null;
-const isDescritionValide = Validator.nameValidator("La description", 10, 40, description) == null;
+const isDescritionValide = Validator.nameValidator("La description", 10, 500, description) == null;
 const isPhotoValide =photoInput.files[0]?.type.startsWith("image/");
 const isTypeValide = typeInput.value !== "";
 

@@ -31,14 +31,24 @@
 						<li class="nav-item"><a class="nav-link" href="#about" data-click="scroll-to-target">ABOUT</a></li>
 						<li class="nav-item"><a class="nav-link" href="#team" data-click="scroll-to-target">TEAM</a></li>
 						<li class="nav-item"><a class="nav-link" href="#service" data-click="scroll-to-target">SERVICES</a></li>
-						<li class="nav-item"><a class="nav-link" href="#work" data-click="scroll-to-target">WORK</a></li>
+						<li class="nav-item"><a class="nav-link" href="#work" data-click="scroll-to-target">REALISATON</a></li>
 						<li class="nav-item"><a class="nav-link" href="#client" data-click="scroll-to-target">CLIENT</a></li>
 						<li class="nav-item"><a class="nav-link" href="#pricing" data-click="scroll-to-target">PRICING</a></li>
 						<li class="nav-item"><a class="nav-link" href="#contact" data-click="scroll-to-target">CONTACT</a></li>
 						<li class="nav-item"><a class="nav-link" href="login">CONNEXION</a></li>
+						<?php  
+						session_start();
+						
+						if (isset($_SESSION['email'])) :?>
+						<li class="nav-item">
+						<a class="nav-link" href="admin">
+						<span class="brand-text">
+						   Retour Vers <span class="text-primary">Amdin</span>
+					   </span>
+						</a>
+					</li>
+					<?php endif?>
 					</ul>
 				</div>
-				<!-- end navbar-collapse -->
 			</div>
-			<!-- end container -->
 		</div>

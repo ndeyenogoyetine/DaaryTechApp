@@ -5,6 +5,7 @@ RewriteBase /DaarayTecApp/
 RewriteRule ^admin$  admin.php   
 RewriteRule ^home$   index.php   
 RewriteRule ^login$  login.php  
+RewriteRule ^logout$  controller/user/UserMainController.php?logout=1
 
 # ── Views : Service Réalisation ─────────────────────────
 RewriteRule ^listeServiceRea$    View/pages/admin/serviceRea/liste.php     

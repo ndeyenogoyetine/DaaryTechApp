@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // ✅ querySelectorAll + forEach pour cibler tous les boutons
-    document.querySelectorAll(".btn-delete").forEach(function(btnDelete) {
+    document.querySelectorAll(".btn-restaurer").forEach(function(btnRestaurer) {
 
-        btnDelete.addEventListener("click", function(event) {
+        btnRestaurer.addEventListener("click", function(event) {
             event.preventDefault();
 
             const serviceReaId = this.getAttribute('data-id');
             const serviceReaName = this.getAttribute('name-servicerea');
 
-            // ✅ Swal avec S majuscule
             Swal.fire({
-                title: `Voulez vous supprimez la réalisation ${serviceReaName} ?`,
+                title: `Voulez vous bien restaurer la réalisation ${serviceReaName} ?`,
                 text: "Cette action est irréversible !",
                 icon: 'warning',
                 showCancelButton: true,
                 cancelButtonColor: '#3085d6',
-                cancelButtonText: 'Annuler',
+                cancelButtonText: 'Annuler la restauration',
                 confirmButtonColor: '#d33',
-                confirmButtonText: 'Oui, supprimer',
+                confirmButtonText: 'Oui, restaurer',
             }).then((reponse) => {
                 if (reponse.isConfirmed) {
-                    window.location.href = `serviceRearMainController?id=${serviceReaId}&action=delete`;
+                    window.location.href = `serviceRearMainController?id=${serviceReaId}&action=restaurer`;
                 }
             });
         });

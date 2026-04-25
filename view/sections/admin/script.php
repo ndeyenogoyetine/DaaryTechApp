@@ -27,9 +27,14 @@
 
 
 <!-- ================== JS SITE ================== -->
-<script src="public/js/Validator.js"></script>
-<script src="public/js/serviceRea.js"></script>
-<script src="public/js/confirmeDelete.js"></script>
+<script src="public/js/global/Validator.js"></script>
+<script src="public/js/serviceRea/addFremValidator.js"></script>
+<script src="public/js/serviceRea/editFremValidator.js"></script>
+<script src="public/js/serviceRea/confirmeDelete.js"></script>
+<script src="public/js/serviceRea/confirmeRestaurer.js"></script>
+<script src="public/js/serviceRea/confirmeDeleteDef.js"></script>
+<script src="public/js/serviceRea/showHide.js"></script>
+
 
 
 

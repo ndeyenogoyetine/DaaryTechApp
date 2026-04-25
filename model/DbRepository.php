@@ -21,7 +21,7 @@
 
       private function getConnexion()
       {
-         $dsn = "mysql:host={$this->host};dbname={$this->dbname}";
+         $dsn = "mysql:host={$this->host};port=3307;dbname={$this->dbname}";
          try {
             $this->db = new PDO(dsn: $dsn, username: $this->user, password: $this->password);
             $this->db->setAttribute(attribute: PDO::ATTR_ERRMODE, value: PDO::ERRMODE_EXCEPTION);

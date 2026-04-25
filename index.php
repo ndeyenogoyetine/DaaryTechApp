@@ -51,6 +51,9 @@
 	</div>
 	        <!-- ================== Section Scrip ================== -->
 			  <?php require_once("view/sections/vitrine/script.php") ;?>
+			  
+			  <!-- ================== Section Message D'Ereur ================== -->
+ 		 <?php require_once("view/sections/admin/msgErrorSuccess.php") ;?>
 
 </body>
 </html>
