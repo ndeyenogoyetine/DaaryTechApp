@@ -9,7 +9,7 @@ const btnSubmitEdit = frmEditRealisation.querySelector("button[type='submit']");
 const photoPreview = document.getElementById("photo-preview");
 
 //Désactive le button de soumission par defaut
-btnSubmitEdit.disabled = true;
+btnSubmitEdit.disabled = false;
 
 //Permet d'afficher ou masquer les message d'erreur
 function showErrorEdit(input, message) {
@@ -92,7 +92,7 @@ function checkFormValidatyEdit() {
 
     const isNameValide = Validator.nameValidator("Le nom", 5, 40, nom) == null;
     const isDescriptionValide = Validator.nameValidator("La description", 10, 500, description) == null;
-    const isPhotoValide = (photo && photo.type.startsWith("image/")) || !photoPreview.src;
+    const isPhotoValide = photo && photo.type.startsWith("image/") || !photoPreview.src;
     const isTypeValide = type !== "";
 
     btnSubmitEdit.disabled = !(isNameValide && isDescriptionValide && isPhotoValide && isTypeValide);

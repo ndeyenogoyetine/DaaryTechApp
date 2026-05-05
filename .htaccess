@@ -11,34 +11,32 @@ RewriteRule ^logout$  controller/user/UserMainController.php?logout=1
 RewriteRule ^listeServiceRea$    View/pages/admin/serviceRea/liste.php     
 RewriteRule ^corbeillServiceRea$ View/pages/admin/serviceRea/corbielle.php
 
-# ── Views : Clients ─────────────────────────────────────
-RewriteRule ^listeClient$        View/pages/admin/client/liste.php        
-RewriteRule ^corbeillClient$     View/pages/admin/client/corbielle.php    
-
 # ── Views : Contact ─────────────────────────────────────
 RewriteRule ^listeContact$       View/pages/admin/contact/liste.php       
 
-# ── Views : FAQ ─────────────────────────────────────────
-RewriteRule ^listeFaq$           View/pages/admin/faq/liste.php           
-RewriteRule ^corbeillFaq$        View/pages/admin/faq/corbielle.php       
+# ── Views : Newsletter ─────────────────────────────────────
+RewriteRule ^listeNewsletter$       View/pages/admin/newsletter/liste.php       
+
 
 # ── Views : Profil ──────────────────────────────────────
 RewriteRule ^profil$             View/pages/admin/profil/profil.php       
 
 # ── Views : Users ───────────────────────────────────────
 RewriteRule ^listeUser$          View/pages/admin/user/liste.php          
-RewriteRule ^corbeillUser$       View/pages/admin/user/corbielle.php      
+RewriteRule ^corbeillUser$       View/pages/admin/user/corbielle.php 
+RewriteRule ^reinitEmail$       View/pages/vitrine/reinitEmail.php      
+RewriteRule ^reinit$       View/pages/vitrine/reinit.php      
+
 
 # ── Controllers ─────────────────────────────────────────
 RewriteRule ^UserMainController$        controller/user/UserMainController.php 
-RewriteRule ^clientsrMainController$    controller/client/ClientMainController.php        
 RewriteRule ^faqMainController$         controller/faq/FaqMainController.php           
-RewriteRule ^newsletterMainController$  controller/newsletter/NewsletterMainController.php    
-RewriteRule ^serviceRearMainController$ controller/serviceRea/ServiceReaMainController.php    
+RewriteRule ^serviceRearMainController$ controller/serviceRea/ServiceReaMainController.php   
+RewriteRule ^ContactMainController$        controller/contact/ContactMainController.php 
+RewriteRule ^newsletterMainController$        controller/newsletter/NewsletterMainController.php 
+
 
 # ── Models ──────────────────────────────────────────────
 RewriteRule ^userRepository$        model/UserRepository.php       
-RewriteRule ^clientsrRepository$    model/ClientRepository.php     
 RewriteRule ^faqRepository$         model/FaqRepository.php        
-RewriteRule ^newsletterRepository$  model/NewsletterRepository.php 
 RewriteRule ^servicerearRepository$ model/ServiceReaRepository.php 

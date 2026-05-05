@@ -1,74 +1,58 @@
-//Sélectionner les champs du formulaire
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
+const emailInputLogin = document.getElementById("email");
+const passwordInputLogin = document.getElementById("password");
 const btnSubmit = document.getElementById("btnSubmit");
 
-// Desactiver le bouton de soumission par defaut
-btnSubmit.disabled = true;
+// ✅ Vérifie qu'on est bien sur la page login avant d'exécuter
+if (emailInputLogin && passwordInputLogin && btnSubmit) {
 
-//permet d'afficher ou masquer les message d'erreur
-function showError(input, message) {
-    const baliseP = input.nextElementSibling;
+    // Desactiver le bouton de soumission par defaut
+    btnSubmit.disabled = true;
 
-    if (message) {
-        baliseP.textContent = message;
-        input.classList.add("is-invalid");
-    }
-    else 
-        {
-        baliseP.textContent = "";
-        input.classList.remove("is-invalid");
-       }
-
-}
-
-// Validation de l'email à la saisie
-
-emailInput.addEventListener("input", () => {
-    const email = emailInput.value.trim();
-    const emailValidator = Validator.emailValidator("L'email", email);
-    if (emailValidator) {
-        showError(emailInput, emailValidator.message);
-         checkFormValidaty()
-    }
-    else 
-        {
-        showError(emailInput, "");
-        checkFormValidaty()
+    function showError(input, message) {
+        const baliseP = input.nextElementSibling;
+        if (message) {
+            baliseP.textContent = message;
+            input.classList.add("is-invalid");
+        } else {
+            baliseP.textContent = "";
+            input.classList.remove("is-invalid");
         }
-
-});
-// Validation de l'adresse à la saisie
-
-passwordInput.addEventListener("input", () => {
-    const password = passwordInput.value.trim();
-    const passwordValidator = Validator.passwordValidator("Le mot de passge", password, 8);
-    console.log(passwordValidator);
-    if (passwordValidator) {
-        showError(passwordInput, passwordValidator.message);
-       checkFormValidaty()
     }
-    else 
-        {
-        showError(passwordInput, "");
-        checkFormValidaty()
+
+    emailInputLogin.addEventListener("input", () => {
+        const email = emailInputLogin.value.trim();
+        const emailLoginValidator = Validator.emailValidator("L'email", email);
+        if (emailLoginValidator) {
+            showError(emailInputLogin, emailLoginValidator.message);
+        } else {
+            showError(emailInputLogin, "");
+            checkFormValidaty();
         }
-});
+    });
 
-//Active le bouton de connexion i les deux est valides
- function checkFormValidaty()
-{
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    passwordInputLogin.addEventListener("input", () => {
+        const password = passwordInputLogin.value.trim();
+        const passwordLoginValidator = Validator.passwordValidator("Le mot de passe", password, 8);
+        if (passwordLoginValidator) {
+            showError(passwordInputLogin, passwordLoginValidator.message);
+            checkFormValidaty();
+        } else {
+            showError(passwordInputLogin, "");
+            checkFormValidaty();
+        }
+    });
 
-    const emailValidator = Validator.emailValidator("L'email", email);
-    const passwordValidator = Validator.passwordValidator("Le mot de passe", password, 8);
+    function checkFormValidaty() {
+        const email = emailInputLogin.value.trim();
+        const password = passwordInputLogin.value.trim();
+        const emailLoginValidator = Validator.emailValidator("L'email", email);
+        const passwordLoginValidator = Validator.passwordValidator("Le mot de passe", password, 8);
 
-    if (!emailValidator && !passwordValidator) {
-        btnSubmit.disabled = false;
+        if (!emailLoginValidator && !passwordLoginValidator) {
+            btnSubmit.disabled = false;
+        } else {
+            btnSubmit.disabled = true;
+        }
     }
-    else
-        {
-         btnSubmit.disabled = true;
-       }
+
 }

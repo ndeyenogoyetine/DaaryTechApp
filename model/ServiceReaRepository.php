@@ -17,8 +17,8 @@ class ServiceReaRepository extends DbRepository
         try {
             $statement = $this->db->prepare($sql);
             $statement->execute(['etat' => $etat]);
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            return $result ?: null;
+            return  $statement->fetchAll(PDO::FETCH_ASSOC) ?: null;
+
         } catch (PDOException $error) {
             $etatLabel = $etat == 1 ? "actives" : "supprimés";
             error_log("Erreur lors de la récupération des services $etatLabel : " . $error->getMessage());
@@ -52,8 +52,8 @@ class ServiceReaRepository extends DbRepository
         try {
             $statement = $this->db->prepare($sql);
             $statement->execute(['id' => $id]); 
-            $result = $statement->fetch(PDO::FETCH_ASSOC);
-            return $result ?: null;
+            $statement->execute();
+            return  $statement->fetch(PDO::FETCH_ASSOC) ?: null;
         } catch (PDOException $error) {
             error_log("Erreur lors de la récupération de l'id $id : " . $error->getMessage());
             throw $error;
@@ -100,7 +100,9 @@ class ServiceReaRepository extends DbRepository
                 'updated_by'  => $updated_by,
                 'id'          => $id
             ]);
-            return $statement->rowCount() > 0;
+            
+            
+            return $statement->rowCount() >= 0;
         } catch (PDOException $error) {
             error_log("Erreur lors de la modification de $nom : " . $error->getMessage());
             throw $error;

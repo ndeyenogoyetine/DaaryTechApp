@@ -1,7 +1,7 @@
 <div id="header" class="header navbar-default">
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
-				<a href="home" class="navbar-brand"><span class="navbar-logo"></span> <b>Color</b> Admin</a>
+				<a href="admin" class="navbar-brand"><span class="navbar-logo"></span> <b>Daaray</b> Technologie</a>
 				<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -82,8 +82,8 @@
 				</li>
 				<li class="dropdown navbar-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<img src="public/templates/templateAdmine/assets/img/user/user-13.jpg" alt="" /> 
-						<span class="d-none d-md-inline">Adam Schwartz</span> <b class="caret"></b>
+						<img src="public/images/users/<?= $photo ?>" alt="" /> 
+						<span class="d-none d-md-inline"><?= $email ?></span> <b class="caret"></b>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<a href="javascript:;" class="dropdown-item">Edit Profile</a>

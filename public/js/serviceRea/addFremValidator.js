@@ -7,24 +7,8 @@ const frmAddRealisation = document.getElementById("addRealisationFrom");
 const btnSubmit = frmAddRealisation.querySelector("button[type='submit']");
 
 //Désactive le button de soumission par defaut
-btnSubmit.disabled = true;
+btnSubmit.disabled = false;
 
-/*Permet d'afficher ou masquer les message d'erreur
-function showError(input, message) {
-    const baliseP = input.nextElementSibling;
-
-    if (message) {
-        baliseP.textContent = message;
-        input.classList.add("is-invalid");
-        baliseP.style.color = "brown";
-        baliseP.style.fontWeight = "bold";
-    }
-    else {
-        baliseP.textContent = "";
-        input.classList.remove("is-invalid");
-    }
-
-}*/
 
 function showError(input, message) {
     const baliseP = input.closest(".form-group").querySelector(".error-message");

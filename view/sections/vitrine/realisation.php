@@ -8,7 +8,7 @@ try {
 } catch (Exception $error) {
     echo "<p>Erreur lors du chargement de la liste des réalisations : " . $error->getMessage() . "</p>";
     $listeRealisations = [];
-}
+}  
 ?>
 
 <!-- =========  Tableau liste Réalisations  =========== -->

@@ -1,10 +1,9 @@
 <div id="pricing" class="content" data-scrollview="true">
 			<!-- begin container -->
 			<div class="container">
-				<h2 class="content-title">Our Price</h2>
+				<h2 class="content-title">Nos forfaits</h2>
 				<p class="content-desc">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-					sed bibendum turpis luctus eget
+					Daaray Technologie propose aussi des services d'hébergement
 				</p>
 				<!-- begin pricing-table -->
 				<ul class="pricing-table pricing-col-4">

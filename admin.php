@@ -7,15 +7,8 @@
 <body>
 	
 <!-- ==================   Verivication section  ================== -->
-<?php 
-
-	session_start();
-	if (!isset($_SESSION['email'])) {  
-	header("Location: login?error=1&message=" . urlencode("Merci de connecter d'abord") . "&title=" . urlencode("Accès Interdit !"));
-	exit; 
-	}
-
-?>
+	        <?php require_once("view/sections/admin/verifySession.php") ;?>
+			
 <!-- ==================  Section Loader  ================== -->
 
 	<div id="page-loader" class="fade show">

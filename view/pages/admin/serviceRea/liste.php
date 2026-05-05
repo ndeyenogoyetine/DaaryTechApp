@@ -4,6 +4,10 @@
 <?php require_once("../../../sections/admin/head.php"); ?>
 
 <body>
+
+<!-- ==================  Vérification session ================== -->
+	  <?php require_once("../../../sections/admin/verifySession.php") ;?>
+
 	<!-- =========  Récuperation lise serviceRea de la BD  =========== -->
 	<?php
 	require_once("../../../../model/ServiceReaRepository.php");
@@ -39,7 +43,7 @@
 					<a href="#modal-add-service-rea" class="btn btn-sm btn-dark text-white fw-bold" data-toggle="modal">Ajouter</a></li>
 				<li id="btn-show-liste" class="breadcrumb-item"><a href="#" class="btn btn-sm btn-dark text-white fw-bold">Afficher Liste</a></li>
 				<li id="btn-show-corbeille" class="breadcrumb-item"><a href="#" class="btn btn-sm btn-dark text-white fw-bold">Afficher Corbeille</a></li>
-				<li class="breadcrumb-item active"><a href="#" class="btn btn-sm btn-dark text-white fw-bold">User</a></li>
+				<li class="breadcrumb-item active"><a href="listeUser" class="btn btn-sm btn-dark text-white fw-bold">User</a></li>
 			</ol>
 			<h1 class="page-header"> # Service / Realisation </h1>
 
@@ -114,7 +118,7 @@
 												<?= htmlspecialchars(date("d/m/Y H:is"), strtotime($serviceRea['updated_at'])) ?> </br>
 											    par <?= htmlspecialchars($serviceRea['updated_by_email']) ?>
 											<?php else : ?>
-                                                     <span class='text-danger ffw-bold'>jamais modifier</span>
+                                                     <span class='text-danger  f-w-700'>jamais modifier</span>
 											<?php endif ?>
 										</td>
                                     <!-- Actions -->
@@ -144,7 +148,7 @@
 									</tr>
 								<?php endforeach ?>
 							<?php else : ?>
-								<p class="alert alert-danger text-center h3 fw-bold">La liste des services / Realisation est viede !</p>
+								<p class="alert alert-danger text-center h3 f-w-700">La liste des services / Realisation est viede !</p>
 							<?php endif ?>
 						</tbody>
 					</table>
@@ -212,17 +216,17 @@
 
                                         <!-- Créer le -->
 										<td class="text-center">
-											<?= htmlspecialchars(date("d/m/Y H:is"), strtotime($serviceRea['created_at'])) ?> </br>
+											<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceRea['created_at'])) ?> </br>
 											par <?= htmlspecialchars($serviceRea['created_by_email']) ?>
 										</td>
 
 										<!-- Modifier le -->
 										<td class="text-center">
 											<?php if ($serviceRea['updated_at']) : ?>
-												<?= htmlspecialchars(date("d/m/Y H:is"), strtotime($serviceRea['updated_at'])) ?> </br>
+												<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceRea['updated_at'])) ?> </br>
 											    par <?= htmlspecialchars($serviceRea['updated_by_email']) ?>
 											<?php else : ?>
-                                                     <span class='text-danger ffw-bold'>jamais modifier</span>
+                                                     <span class='text-danger  f-w-700'>jamais modifier</span>
 											<?php endif ?>
 										</td>
                                     <!-- Actions -->
@@ -232,7 +236,7 @@
 										  data-id="<?= htmlspecialchars($serviceRea['id']) ?>"
 										   name-servicerea="<?= htmlspecialchars($serviceRea['nom']) ?>" 
 										   class="btn-restaurer" data-toggle="tooltip" data-placement="top" title="Restaurer">
-											<span class="btn btn-warning fw-bold">Rastaurer</span>
+											<span class="btn btn-warning f-w-700">Rastaurer</span>
 										  </a>
 
 										  <!-- Suppréssion définitive -->
@@ -247,7 +251,7 @@
 									</tr>
 								<?php endforeach ?>
 							<?php else : ?>
-								<p class="alert alert-danger text-center h3 fw-bold">Aucun services ou Realisation supprimé !</p>
+								<p class="alert alert-danger text-center h3 f-w-700">Aucun services ou Realisation supprimé !</p>
 							<?php endif ?>
 						</tbody>
 					</table>
@@ -345,9 +349,9 @@
 							<input type="file" name="edit-photo" id="edit-photo" class="form-control" accept="image/*" required>
 							<p class="error-message mt-2"></p>
 							<div class="image-preview-container">
-
 							<img src="" id="photo-preview" alt="Aperçu de l'imag">
 							</div>
+							
 						</div>
 						<!-- Type -->
 						<div class="form-group">

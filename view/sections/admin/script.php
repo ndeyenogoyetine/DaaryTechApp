@@ -1,3 +1,7 @@
+<!-- ================== GLOBAL JS ================== -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 <!-- ================== BEGIN BASE JS ================== -->
 <script src="public/templates/templateAdmin/assets/js/app.min.js"></script>
 <script src="public/templates/templateAdmin/assets/js/theme/default.min.js"></script>
@@ -26,15 +30,45 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-<!-- ================== JS SITE ================== -->
+<!-- ================== GLOBAL JS ================== -->
 <script src="public/js/global/Validator.js"></script>
-<script src="public/js/serviceRea/addFremValidator.js"></script>
-<script src="public/js/serviceRea/editFremValidator.js"></script>
-<script src="public/js/serviceRea/confirmeDelete.js"></script>
-<script src="public/js/serviceRea/confirmeRestaurer.js"></script>
-<script src="public/js/serviceRea/confirmeDeleteDef.js"></script>
-<script src="public/js/serviceRea/showHide.js"></script>
 
+<!-- ==================  JS APP ================== -->
 
+<script>
+    function loadScriptIfPathEndswith(path, scriptSources) {
+        if (window.location.pathname.endsWith(path)) {
 
+            scriptSources.forEach(src => {
+                const script = document.createElement("script");
+                script.src = src;
+                document.body.appendChild(script);
+
+            });
+        }
+    }
+
+    loadScriptIfPathEndswith("listeServiceRea", [
+
+        "public/js/serviceRea/addFremValidator.js",
+        "public/js/serviceRea/editFremValidator.js",
+        "public/js/serviceRea/confirmeDelete.js",
+        "public/js/serviceRea/confirmeRestaurer.js",
+        "public/js/serviceRea/confirmeDeleteDef.js",
+        "public/js/serviceRea/showHide.js"
+
+    ]);
+
+     loadScriptIfPathEndswith("listeUser", [
+
+          "public/js/user/addFremValidator.js",
+          "public/js/user/editFremValidator.js",
+          "public/js/user/confirmeDelete.js",
+         "public/js/user/confirmeRestaurer.js",
+          "public/js/user/showHide.js",
+          "public/js/user/changePasswordFremValidator.js"
+          
+ 
+    ]);
+</script>
 

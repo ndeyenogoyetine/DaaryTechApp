@@ -7,11 +7,11 @@
 						<a href="javascript:;" data-toggle="nav-profile">
 							<div class="cover with-shadow"></div>
 							<div class="image">
-								<img src="public/templates/templateAdmin/assets/img/user/user-13.jpg" alt="" />
+								<img src="public/images/users/<?= $photo ?>" alt="" />
 							</div>
 							<div class="info">
-								<b class="caret pull-right"></b>Sean Ngu
-								<small>Front end developer</small>
+								<b class="caret pull-right"></b><?= $nom ?>
+								<small><?= $email ?></small>
 							</div>
 						</a>
 					</li>
@@ -51,25 +51,9 @@
 							<span>Service / Réalisation</span>
 						</a>
 					</li>
-					<!-- Clients-->
-					<li class="has-sub">
-						<a href="javascript:;">
-							<span class="badge pull-right">10</span>
-							<i class="fa fa-user"></i>
-							<span>Clients</span>
-						</a>
-					</li>
-					<!-- Faq -->
-					<li class="has-sub">
-						<a href="javascript:;">
-							<span class="badge pull-right">10</span>
-							<i class="fa fa-question"></i>
-							<span>Faq</span>
-						</a>
-					</li>
 					<!-- Contacts -->
 					<li class="has-sub">
-						<a href="javascript:;">
+						<a href="listeContact">
 							<span class="badge pull-right">10</span>
 							<i class="fa fa-envelope"></i>
 							<span>Contacts</span>
@@ -77,7 +61,7 @@
 					</li>
 					<!-- Newsletter -->
 					<li class="has-sub">
-						<a href="javascript:;">
+						<a href="listeNewsletter">
 							<span class="badge pull-right">10</span>
 							<i class="fa fa-envelope"></i>
 							<span>Newsletter</span>
@@ -85,7 +69,7 @@
 					</li>
 					<!-- user -->
 					<li class="has-sub">
-						<a href="javascript:;">
+						<a href="listeUser">
 							<span class="badge pull-right">10</span>
 							<i class="fa fa-users"></i>
 							<span>User</span>

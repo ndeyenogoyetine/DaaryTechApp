@@ -32,8 +32,11 @@
                     <div class="checkbox checkbox-css m-b-20">
                         <input type="checkbox" id="remember_checkbox" name="remember" />
                         <label for="remember_checkbox">Remember Me</label>
-                        <small class="ml-3">
+                        <small class="ml-2">
                             <a class="text-center fw-bold text-white h6" href="home">Retourner vers l'accueil</a>
+                        </small>
+                         <small class="ml-2">
+                            <a class="text-center fw-bold text-white h6" href="reinitEmail">Mot de passe oublié ?</a>
                         </small>
                     </div>
 
